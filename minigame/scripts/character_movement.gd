@@ -24,6 +24,6 @@ func _physics_process(delta: float) -> void:
 		animator.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		animator.stop()
+		animator.play("idle")
 
 	move_and_slide()

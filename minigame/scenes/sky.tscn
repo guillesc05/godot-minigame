@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb4fbrsclcdr4"]
+
+[ext_resource type="Shader" uid="uid://bmn6bvb2tq7df" path="res://shaders/scene.gdshader" id="1_owpp6"]
+[ext_resource type="Script" uid="uid://ccuje70ekns0x" path="res://scripts/canvas.gd" id="2_sxins"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u3cyc"]
+shader = ExtResource("1_owpp6")
+shader_parameter/bg_color = Color(0, 0, 0, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/bigStarSlow = 2.0
+shader_parameter/mediumStarSlow = 6.0
+shader_parameter/smallStarSlow = 8.0
+shader_parameter/smallStarAmount = 0.002
+shader_parameter/mediumStarAmount = 0.01
+shader_parameter/bigStarAmount = 0.02
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3253y"]
+
+[node name="canvas" type="Sprite2D"]
+visibility_layer = 513
+material = SubResource("ShaderMaterial_u3cyc")
+scale = Vector2(402, 245)
+texture = SubResource("CanvasTexture_3253y")
+script = ExtResource("2_sxins")

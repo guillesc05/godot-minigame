@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://htquxikymh1q"]
+
+[ext_resource type="PackedScene" uid="uid://bb4fbrsclcdr4" path="res://scenes/sky.tscn" id="1_cajio"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = -10
+
+[node name="canvas" parent="." instance=ExtResource("1_cajio")]
+position = Vector2(-36, -16)

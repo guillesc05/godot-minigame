@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cmpqm776yspdo"]
 
-[ext_resource type="Texture2D" uid="uid://dmt388efof5ia" path="res://spritesheet-player.png" id="2_i3pqv"]
-[ext_resource type="Script" uid="uid://bemlkbi5uamr8" path="res://character_movement.gd" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dmt388efof5ia" path="res://assets/spritesheet-player.png" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://bemlkbi5uamr8" path="res://scripts/character_movement.gd" id="2_onrkg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
 atlas = ExtResource("2_i3pqv")
@@ -16,9 +16,17 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hqtel")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sweqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
 }],
 "loop": true,
 "name": &"walk",
@@ -33,8 +41,10 @@ script = ExtResource("2_onrkg")
 
 [node name="spriteAnim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2hs0m")
-animation = &"walk"
-frame_progress = 0.314292
+animation = &"idle"
+speed_scale = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4flbx")
+
+[node name="PlacementComponent" type="Node2D" parent="."]
