@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://eclay4oeojup"]
+[gd_scene load_steps=5 format=3 uid="uid://eclay4oeojup"]
 
 [ext_resource type="Shader" uid="uid://bihbrl4ae00if" path="res://shaders/distortion.gdshader" id="1_uxcx0"]
 [ext_resource type="Texture2D" uid="uid://x3xcoumvk0ch" path="res://assets/ore.png" id="2_6t7gt"]
+[ext_resource type="Script" uid="uid://jumce5ywqhck" path="res://scripts/color_extract_color.gd" id="3_ci4px"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yhrn8"]
+resource_local_to_scene = true
 shader = ExtResource("1_uxcx0")
-shader_parameter/interval = 0.1
+shader_parameter/interval = 0.2
 shader_parameter/timeDelay = 1.335
-shader_parameter/intensityX = 0.21
-shader_parameter/intensityY = 0.91
+shader_parameter/intensityX = 1.0
+shader_parameter/intensityY = 1.0
 shader_parameter/seed = 42.0
 shader_parameter/color = Color(0.203922, 1, 1, 1)
 
@@ -20,3 +22,6 @@ material = SubResource("ShaderMaterial_yhrn8")
 position = Vector2(1.19209e-07, 0)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_6t7gt")
+
+[node name="color" type="Node2D" parent="."]
+script = ExtResource("3_ci4px")

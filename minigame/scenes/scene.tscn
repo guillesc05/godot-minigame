@@ -1,23 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://dridn07fcbu4h"]
+[gd_scene load_steps=7 format=3 uid="uid://dridn07fcbu4h"]
 
 [ext_resource type="PackedScene" uid="uid://cmpqm776yspdo" path="res://scenes/player.tscn" id="1_ulcgi"]
 [ext_resource type="PackedScene" uid="uid://htquxikymh1q" path="res://scenes/sky_canvas.tscn" id="3_5fb3c"]
 [ext_resource type="PackedScene" uid="uid://6touh2dqy0il" path="res://scenes/tilemap.tscn" id="3_3253y"]
 [ext_resource type="PackedScene" uid="uid://bidwsqqqvf1rb" path="res://scenes/grid_canvas.tscn" id="5_gjmho"]
 [ext_resource type="Script" uid="uid://b6ejlhxuwg644" path="res://scripts/camera_2d.gd" id="5_m7jmp"]
+[ext_resource type="Script" uid="uid://b703acpckr47w" path="res://scripts/scene_info.gd" id="6_t7and"]
 
 [node name="Scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ulcgi")]
-position = Vector2(47, 155)
+position = Vector2(47, -118.36)
 
-[node name="Node2D" parent="." instance=ExtResource("3_3253y")]
+[node name="tilemap" parent="." instance=ExtResource("3_3253y")]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_5fb3c")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(64, 116)
+position = Vector2(64, -60)
 script = ExtResource("5_m7jmp")
 
 [node name="grid-canvas" parent="." instance=ExtResource("5_gjmho")]
 visible = false
+
+[node name="scene_info" type="Node2D" parent="."]
+position = Vector2(0, -180)
+script = ExtResource("6_t7and")
+
+[node name="node_instantiator" type="Node2D" parent="."]
+position = Vector2(0, -180)
