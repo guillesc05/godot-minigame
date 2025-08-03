@@ -22,6 +22,3 @@ script = ExtResource("5_m7jmp")
 [node name="scene_info" type="Node2D" parent="."]
 position = Vector2(0, -180)
 script = ExtResource("6_t7and")
-
-[node name="node_instantiator" type="Node2D" parent="."]
-position = Vector2(0, -180)

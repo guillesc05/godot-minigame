@@ -33,6 +33,7 @@ func generate_ores()->void:
 		#generate ores
 		var ore = scene.instantiate()
 		add_child(ore)
+		print(get_parent())
 		rng.randomize()
 		var num = rng.randi_range(0, grass_cells.size()-1)
 		var posX = grass_cells[num].x
