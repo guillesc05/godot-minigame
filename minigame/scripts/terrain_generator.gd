@@ -17,6 +17,7 @@ func _ready() -> void:
 func generate_terrain()->void:
 	var noise = FastNoiseLite.new()
 	var rnd_seed = rng.randi_range(0, 10000)
+	#recorrido en las x para generar
 	for i in range(-TERRAIN_WIDTH/2, TERRAIN_WIDTH/2):
 		var smooth_factor: float = absf(i)/(TERRAIN_WIDTH/2)
 		var value = (noise.get_noise_1d((rnd_seed+ i) * 10)+ 1)/2 * (smooth_factor)
@@ -54,3 +55,4 @@ func generate_ores()->void:
 		color.h = rng.randf()
 		ore.get_node("color").setColor(color)
 		
+		ore.get_node("position_in_grid").setGridPos(Vector2(posX, grass_cells[num].y + 1))
