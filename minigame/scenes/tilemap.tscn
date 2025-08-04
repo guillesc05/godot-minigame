@@ -1,12 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://6touh2dqy0il"]
+[gd_scene load_steps=8 format=3 uid="uid://6touh2dqy0il"]
 
 [ext_resource type="Texture2D" uid="uid://b70t88dpekndx" path="res://assets/tilemap.png" id="1_1i3gi"]
 [ext_resource type="Texture2D" uid="uid://c5gey8wqsps4i" path="res://assets/cannon.png" id="2_38yc0"]
 [ext_resource type="Script" uid="uid://bp50253vubow5" path="res://scripts/terrain_generator.gd" id="2_v3dip"]
-[ext_resource type="Texture2D" uid="uid://br1vo033q0s3e" path="res://assets/ore_placement.png" id="3_i8yab"]
-[ext_resource type="Texture2D" uid="uid://dj1nmq25h42s4" path="res://assets/pipes.png" id="5_v3dip"]
-[ext_resource type="Script" uid="uid://b0eltqmibkba4" path="res://scripts/create_building.gd" id="6_ld261"]
-[ext_resource type="Texture2D" uid="uid://c6ju4xjpv5n0h" path="res://assets/drill.png" id="6_xjbjy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nsmjb"]
 texture = ExtResource("1_1i3gi")
@@ -48,100 +44,6 @@ texture_region_size = Vector2i(8, 8)
 tile_size = Vector2i(8, 8)
 sources/1 = SubResource("TileSetAtlasSource_38yc0")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3dip"]
-texture = ExtResource("3_i8yab")
-texture_region_size = Vector2i(8, 8)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_i8yab"]
-tile_size = Vector2i(8, 8)
-sources/1 = SubResource("TileSetAtlasSource_v3dip")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ld261"]
-texture = ExtResource("5_v3dip")
-texture_region_size = Vector2i(8, 8)
-0:0/0 = 0
-0:0/0/terrain_set = 0
-0:0/0/terrain = 0
-0:0/0/terrains_peering_bit/right_side = 0
-0:0/0/terrains_peering_bit/left_side = 0
-1:0/0 = 0
-1:0/0/terrain_set = 0
-1:0/0/terrain = 0
-1:0/0/terrains_peering_bit/right_side = 0
-1:0/0/terrains_peering_bit/bottom_side = 0
-2:0/0 = 0
-2:0/0/terrain_set = 0
-2:0/0/terrain = 0
-2:0/0/terrains_peering_bit/bottom_side = 0
-2:0/0/terrains_peering_bit/left_side = 0
-0:1/0 = 0
-0:1/0/terrain_set = 0
-0:1/0/terrain = 0
-0:1/0/terrains_peering_bit/bottom_side = 0
-0:1/0/terrains_peering_bit/top_side = 0
-1:1/0 = 0
-1:1/0/terrain_set = 0
-1:1/0/terrain = 0
-1:1/0/terrains_peering_bit/right_side = 0
-1:1/0/terrains_peering_bit/top_side = 0
-2:1/0 = 0
-2:1/0/terrain_set = 0
-2:1/0/terrain = 0
-2:1/0/terrains_peering_bit/left_side = 0
-2:1/0/terrains_peering_bit/top_side = 0
-2:2/0 = 0
-2:2/0/terrain_set = 0
-2:2/0/terrain = 0
-2:2/0/terrains_peering_bit/right_side = 0
-2:2/0/terrains_peering_bit/bottom_side = 0
-2:2/0/terrains_peering_bit/left_side = 0
-2:2/0/terrains_peering_bit/top_side = 0
-0:2/0 = 0
-0:2/0/terrain_set = 0
-0:2/0/terrain = 0
-0:2/0/terrains_peering_bit/right_side = 0
-0:2/0/terrains_peering_bit/left_side = 0
-3:2/0 = 0
-3:2/0/terrain_set = 0
-3:2/0/terrain = 0
-3:2/0/terrains_peering_bit/right_side = 0
-3:2/0/terrains_peering_bit/bottom_side = 0
-3:2/0/terrains_peering_bit/left_side = 0
-3:1/0 = 0
-3:1/0/terrain_set = 0
-3:1/0/terrain = 0
-3:1/0/terrains_peering_bit/bottom_side = 0
-3:1/0/terrains_peering_bit/left_side = 0
-3:1/0/terrains_peering_bit/top_side = 0
-3:3/0 = 0
-3:3/0/terrain_set = 0
-3:3/0/terrain = 0
-3:3/0/terrains_peering_bit/right_side = 0
-3:3/0/terrains_peering_bit/left_side = 0
-3:3/0/terrains_peering_bit/top_side = 0
-3:0/0 = 0
-3:0/0/terrain_set = 0
-3:0/0/terrain = 0
-3:0/0/terrains_peering_bit/right_side = 0
-3:0/0/terrains_peering_bit/bottom_side = 0
-3:0/0/terrains_peering_bit/top_side = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xjbjy"]
-texture = ExtResource("6_xjbjy")
-texture_region_size = Vector2i(8, 8)
-0:0/size_in_atlas = Vector2i(1, 2)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, -4)
-
-[sub_resource type="TileSet" id="TileSet_v3dip"]
-tile_size = Vector2i(8, 8)
-terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Terrain 0"
-terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_ld261")
-sources/2 = SubResource("TileSetAtlasSource_xjbjy")
-
 [node name="TILEMAP" type="TileMapLayer"]
 z_index = -1
 tile_map_data = PackedByteArray(0, 0, 37, 0, 18, 0, 0, 0, 3, 0, 2, 0, 0, 0, 38, 0, 18, 0, 0, 0, 3, 0, 2, 0, 0, 0, 39, 0, 18, 0, 0, 0, 3, 0, 2, 0, 0, 0, 39, 0, 19, 0, 0, 0, 3, 0, 2, 0, 0, 0, 38, 0, 19, 0, 0, 0, 3, 0, 2, 0, 0, 0)
@@ -152,11 +54,3 @@ script = ExtResource("2_v3dip")
 visibility_layer = 524289
 tile_map_data = PackedByteArray(0, 0, 0, 0, 247, 255, 1, 0, 0, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_fofut")
-
-[node name="ores" type="TileMapLayer" parent="."]
-z_index = -795
-tile_set = SubResource("TileSet_i8yab")
-
-[node name="buildings" type="TileMapLayer" parent="."]
-tile_set = SubResource("TileSet_v3dip")
-script = ExtResource("6_ld261")

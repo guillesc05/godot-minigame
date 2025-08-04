@@ -3,3 +3,4 @@ extends Camera2D
 
 func _process(delta: float) -> void:
 	position.x = player.position.x
+	position.y = player.position.y
