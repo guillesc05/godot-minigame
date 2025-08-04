@@ -17,17 +17,19 @@ func _on_body_entered(body: Node2D) -> void:
 	print(body.name)
 	if body.has_node("grabbableComponent") && body != objectBeingGrabbed:
 		lastObjectToGrab.push_front(body)
-		if e_key ==null:
-			e_key = eKeyRef.instantiate()
-			topPlayerNode.add_sibling(e_key)
-		e_key.setObjectToFollow(lastObjectToGrab[0])
+		if objectBeingGrabbed == null:
+			if e_key ==null:
+				e_key = eKeyRef.instantiate()
+				topPlayerNode.add_sibling(e_key)
+			e_key.setObjectToFollow(lastObjectToGrab[0])
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.has_node("grabbableComponent"):
 		lastObjectToGrab.erase(body)
 		if lastObjectToGrab.size() >0:
 			e_key.setObjectToFollow(lastObjectToGrab[0])
-		else: e_key.queue_free()
+		else: if e_key != null: 
+			e_key.queue_free()
 		
 func grab():
 	objectBeingGrabbed = lastObjectToGrab[0]

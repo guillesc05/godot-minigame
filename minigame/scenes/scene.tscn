@@ -26,3 +26,5 @@ script = ExtResource("6_t7and")
 
 [node name="mountain_relic" parent="." instance=ExtResource("6_ruw3y")]
 position = Vector2(77, -58)
+
+[node name="mountain_relic2" parent="." instance=ExtResource("6_ruw3y")]
