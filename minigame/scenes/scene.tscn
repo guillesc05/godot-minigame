@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://htquxikymh1q" path="res://scenes/sky_canvas.tscn" id="3_5fb3c"]
 [ext_resource type="PackedScene" uid="uid://6touh2dqy0il" path="res://scenes/tilemap.tscn" id="3_3253y"]
 [ext_resource type="Script" uid="uid://b6ejlhxuwg644" path="res://scripts/camera_2d.gd" id="5_m7jmp"]
-[ext_resource type="PackedScene" uid="uid://bxhxf2kr6dr08" path="res://scenes/mountain_relic.tscn" id="6_ruw3y"]
+[ext_resource type="PackedScene" path="res://scenes/mountain_relic.tscn" id="6_ruw3y"]
 [ext_resource type="Script" uid="uid://b703acpckr47w" path="res://scripts/scene_info.gd" id="6_t7and"]
 
 [node name="Scene" type="Node2D"]

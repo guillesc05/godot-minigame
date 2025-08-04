@@ -6,6 +6,14 @@ extends CharacterBody2D
 const SPEED = 50
 const JUMP_VELOCITY = -200.0
 
+var walkAnimation:String = "walk"
+var idleAnimation:String = "idle"
+
+func setWalkAnimation(anim:String):
+	walkAnimation = anim
+	
+func setIdleAnimation(anim:String):
+	idleAnimation = anim
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -21,9 +29,9 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("movement-left", "movement-right")
 	if direction:
 		velocity.x = direction * SPEED
-		animator.play("walk")
+		animator.play(walkAnimation)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		animator.play("idle")
+		animator.play(idleAnimation)
 
 	move_and_slide()

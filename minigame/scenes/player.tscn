@@ -1,8 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmpqm776yspdo"]
+[gd_scene load_steps=13 format=3 uid="uid://cmpqm776yspdo"]
 
+[ext_resource type="Texture2D" uid="uid://bgvcjqvf7uxph" path="res://assets/spritesheet-player-grabbing.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dmt388efof5ia" path="res://assets/spritesheet-player.png" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://bemlkbi5uamr8" path="res://scripts/character_movement.gd" id="2_onrkg"]
 [ext_resource type="Script" uid="uid://bcg65eo2m2deb" path="res://scripts/grab_component.gd" id="3_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
 atlas = ExtResource("2_i3pqv")
@@ -14,6 +27,25 @@ region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2hs0m"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}],
+"loop": true,
+"name": &"grabbing-idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}],
+"loop": true,
+"name": &"grabbing-walk",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hqtel")
@@ -44,7 +76,7 @@ script = ExtResource("2_onrkg")
 
 [node name="spriteAnim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2hs0m")
-animation = &"idle"
+animation = &"grabbing-idle"
 speed_scale = 1.2
 
 [node name="PlacementComponent" type="Node2D" parent="."]
