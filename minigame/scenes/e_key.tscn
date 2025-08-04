@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://wwxihag8wchb"]
+
+[ext_resource type="Texture2D" uid="uid://ckls1f715f2a0" path="res://assets/e_button.png" id="1_jxk47"]
+[ext_resource type="Script" uid="uid://huroka2ra5y7" path="res://scripts/e_key.gd" id="2_cythj"]
+
+[node name="E-key" type="Sprite2D"]
+texture = ExtResource("1_jxk47")
+script = ExtResource("2_cythj")
