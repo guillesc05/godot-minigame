@@ -39,3 +39,5 @@ initial_velocity_max = 20.0
 color = Color(0, 0.697197, 0.697231, 1)
 hue_variation_min = -1.0
 hue_variation_max = 1.0
+
+[node name="grabbableComponent" type="Node2D" parent="."]

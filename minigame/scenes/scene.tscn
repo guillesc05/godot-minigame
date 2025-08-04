@@ -10,7 +10,7 @@
 [node name="Scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ulcgi")]
-position = Vector2(47, 0)
+position = Vector2(47, -71)
 
 [node name="tilemap" parent="." instance=ExtResource("3_3253y")]
 
@@ -25,4 +25,4 @@ position = Vector2(0, -180)
 script = ExtResource("6_t7and")
 
 [node name="mountain_relic" parent="." instance=ExtResource("6_ruw3y")]
-position = Vector2(557, -795)
+position = Vector2(77, -58)
