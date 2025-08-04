@@ -52,5 +52,5 @@ script = ExtResource("2_v3dip")
 
 [node name="cannon" type="TileMapLayer" parent="."]
 visibility_layer = 524289
-tile_map_data = PackedByteArray(0, 0, 0, 0, 247, 255, 1, 0, 0, 0, 1, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 249, 255, 1, 0, 0, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_fofut")

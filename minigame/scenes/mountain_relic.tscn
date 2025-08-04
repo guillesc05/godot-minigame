@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxhxf2kr6dr08"]
+
+[ext_resource type="Shader" uid="uid://bihbrl4ae00if" path="res://shaders/distortion.gdshader" id="1_bicjv"]
+[ext_resource type="Texture2D" uid="uid://x3xcoumvk0ch" path="res://assets/ore.png" id="1_goa4q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdfe1"]
+size = Vector2(8, 8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgy7g"]
+shader = ExtResource("1_bicjv")
+shader_parameter/interval = 1.0
+shader_parameter/timeDelay = 0.0
+shader_parameter/intensityX = 1.49
+shader_parameter/intensityY = 1.13
+shader_parameter/seed = 42.0
+shader_parameter/color = Color(0.027451, 1, 1, 1)
+
+[node name="mountain_relic" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fdfe1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_hgy7g")
+texture = ExtResource("1_goa4q")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = -1
+amount = 40
+lifetime = 2.0
+speed_scale = 2.15
+explosiveness = 1.0
+lifetime_randomness = 0.42
+direction = Vector2(1, 1.86)
+spread = 136.15
+gravity = Vector2(0, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 20.0
+color = Color(0, 0.697197, 0.697231, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
