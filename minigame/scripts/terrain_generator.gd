@@ -17,6 +17,11 @@ func generate_terrain()->void:
 		set_cell(Vector2i(k, 0), 0, Vector2i(1,0))
 		for k2 in 4:
 			set_cell(Vector2i(k, k2+ 1), 0, Vector2i(1,1))
+	
+	generateMountain()
+	
+
+func generateMountain():
 	var noise = FastNoiseLite.new()
 	noise.frequency = 1
 	var rnd_seed = rng.randi_range(0, 10000)
@@ -32,3 +37,4 @@ func generate_terrain()->void:
 		set_cell(Vector2i(i + CANNON_BASE_WIDTH, -height), 0, Vector2i(1,0))
 		for j in (height):
 			set_cell(Vector2i(i + CANNON_BASE_WIDTH, -j), 0, Vector2i(1,1))
+	

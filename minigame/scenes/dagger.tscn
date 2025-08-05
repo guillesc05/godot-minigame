@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy6n8mvh07y06"]
+
+[ext_resource type="Script" uid="uid://g7clxh7qwvq" path="res://scripts/dagger_component.gd" id="1_5mald"]
+[ext_resource type="Texture2D" uid="uid://cpk5h18rohwhu" path="res://assets/dagger.png" id="1_qwa6k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un7sy"]
+size = Vector2(8, 8)
+
+[node name="dagger" type="RigidBody2D"]
+script = ExtResource("1_5mald")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_un7sy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qwa6k")
+
+[node name="grabbableComponent" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

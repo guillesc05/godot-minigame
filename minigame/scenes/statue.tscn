@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://l0bn0mcr5ks3"]
+
+[ext_resource type="Texture2D" uid="uid://dref500nixd2" path="res://assets/statue-sheet.png" id="1_sxr8y"]
+[ext_resource type="Script" uid="uid://bn7jenhtl631u" path="res://scripts/throw_ore_component.gd" id="2_6wwjp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nm2d"]
+atlas = ExtResource("1_sxr8y")
+region = Rect2(0, 0, 48, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as6t3"]
+atlas = ExtResource("1_sxr8y")
+region = Rect2(48, 0, 48, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h8jna"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nm2d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_as6t3")
+}],
+"loop": true,
+"name": &"mouth-opened",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxr8y"]
+size = Vector2(19.5, 47.5)
+
+[node name="statue" type="RigidBody2D"]
+freeze = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h8jna")
+animation = &"idle"
+
+[node name="ThrowOreComponent" type="Node2D" parent="."]
+script = ExtResource("2_6wwjp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.75, 12.75)
+shape = SubResource("RectangleShape2D_sxr8y")
+
+[node name="oreSpawnPos" type="Node2D" parent="."]
+position = Vector2(5, -22)

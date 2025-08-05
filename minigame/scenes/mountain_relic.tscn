@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxhxf2kr6dr08"]
+[gd_scene load_steps=5 format=3 uid="uid://bpuyx28q6h0nx"]
 
 [ext_resource type="Shader" uid="uid://bihbrl4ae00if" path="res://shaders/distortion.gdshader" id="1_bicjv"]
 [ext_resource type="Texture2D" uid="uid://x3xcoumvk0ch" path="res://assets/ore.png" id="1_goa4q"]

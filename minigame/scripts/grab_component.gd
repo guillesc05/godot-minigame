@@ -14,7 +14,6 @@ var e_key = null
 var THROW_FORCE = 200
 
 func _on_body_entered(body: Node2D) -> void:
-	print(body.name)
 	if body.has_node("grabbableComponent") && body != objectBeingGrabbed:
 		lastObjectToGrab.push_front(body)
 		if objectBeingGrabbed == null:

@@ -1,7 +1,7 @@
 extends Sprite2D
 
 var objectToFollow = null
-var DISTANCE_FROM_OBJECT:float = -8.0
+var DISTANCE_FROM_OBJECT:float = -12.0
 
 func setObjectToFollow(obj):
 	objectToFollow = obj
