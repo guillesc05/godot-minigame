@@ -6,6 +6,8 @@ extends Node2D
 
 const THROW_FORCE:float = 200
 
+var used:bool = false
+
 func _ready() -> void:
 	setOre(oreRef)
 
@@ -14,6 +16,7 @@ func setOre(oreToSet:String):
 	oreRef = load(oreToSet)
 	
 func instantiateOre():
+	if used: return
 	#instantiate
 	var ore = oreRef.instantiate()
 	#make child of the scene
@@ -29,4 +32,5 @@ func instantiateOre():
 	
 	
 	sprite.animation = "mouth-opened"
+	used = true
 	

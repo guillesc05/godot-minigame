@@ -3,14 +3,16 @@
 [ext_resource type="Script" uid="uid://g7clxh7qwvq" path="res://scripts/dagger_component.gd" id="1_5mald"]
 [ext_resource type="Texture2D" uid="uid://cpk5h18rohwhu" path="res://assets/dagger.png" id="1_qwa6k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_un7sy"]
-size = Vector2(8, 8)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mald"]
+radius = 3.0
+height = 10.0
 
 [node name="dagger" type="RigidBody2D"]
 script = ExtResource("1_5mald")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_un7sy")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5mald")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qwa6k")

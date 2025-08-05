@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+var used:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,5 +15,18 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node) -> void:
-	print(body.name)
-	if body.has_node("ThrowOreComponent"): body.get_node("ThrowOreComponent").instantiateOre()
+	if(!used):
+		print(body.name)
+		if body.has_node("ThrowOreComponent"): 
+			body.get_node("ThrowOreComponent").instantiateOre()
+			freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
+			freeze = true
+			$grabbableComponent.queue_free()
+			used = true
+			
+			var rot: float = 0
+			if body.scale.x < 0: rot = 180
+			
+			rotation_degrees = rot
+			
+			var cam = get_viewport().get_camera_2d()

@@ -1,7 +1,9 @@
 extends Camera2D
 @onready var player: CharacterBody2D = $"../Player"
 
-var camYOffset = -38
+const OFFSET = 38
+
+var camYOffset = -OFFSET
 
 func _process(delta: float) -> void:
 	position.x = player.position.x

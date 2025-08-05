@@ -1,6 +1,6 @@
 extends TileMapLayer
 
-
+@onready var statueRef = preload("res://scenes/statue.tscn")
 
 const MAX_TERRAIN_HEIGHT: int = 120
 const MOUNTAIN_WIDTH: int = 200
@@ -37,4 +37,8 @@ func generateMountain():
 		set_cell(Vector2i(i + CANNON_BASE_WIDTH, -height), 0, Vector2i(1,0))
 		for j in (height):
 			set_cell(Vector2i(i + CANNON_BASE_WIDTH, -j), 0, Vector2i(1,1))
+		#mountain statue
+	var mountainStatue = statueRef.instantiate()
+	add_sibling.call_deferred(mountainStatue)
+	mountainStatue.position = Vector2(MOUNTAIN_WIDTH* 8, -MAX_TERRAIN_HEIGHT* 8 - 30)
 	

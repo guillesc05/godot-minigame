@@ -4,5 +4,6 @@
 [ext_resource type="Script" uid="uid://huroka2ra5y7" path="res://scripts/e_key.gd" id="2_cythj"]
 
 [node name="E-key" type="Sprite2D"]
+z_index = 100
 texture = ExtResource("1_jxk47")
 script = ExtResource("2_cythj")
