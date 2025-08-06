@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpuyx28q6h0nx"]
+[gd_scene load_steps=7 format=3 uid="uid://bpuyx28q6h0nx"]
 
 [ext_resource type="Shader" uid="uid://bihbrl4ae00if" path="res://shaders/distortion.gdshader" id="1_bicjv"]
 [ext_resource type="Texture2D" uid="uid://x3xcoumvk0ch" path="res://assets/ore.png" id="1_goa4q"]
+[ext_resource type="Script" uid="uid://c5hxies0mpvwu" path="res://scripts/mountain_relic_syncer.gd" id="1_hgy7g"]
+[ext_resource type="AudioStream" uid="uid://bctiooypmoti3" path="res://assets/sounds/heartBeat.wav" id="4_41atp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fdfe1"]
 size = Vector2(8, 8)
@@ -16,6 +18,7 @@ shader_parameter/seed = 42.0
 shader_parameter/color = Color(0.027451, 1, 1, 1)
 
 [node name="mountain_relic" type="RigidBody2D"]
+script = ExtResource("1_hgy7g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_fdfe1")
@@ -41,3 +44,9 @@ hue_variation_min = -1.0
 hue_variation_max = 1.0
 
 [node name="grabbableComponent" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="beatAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_41atp")
+volume_db = -20.0
