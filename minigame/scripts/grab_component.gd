@@ -2,6 +2,8 @@ extends Area2D
 
 @onready var topPlayerNode = $".."
 @onready var eKeyRef = preload("res://scenes/e_key.tscn")
+@onready var pickUpAudio:AudioStreamPlayer2D = $"../pickUpAudio"
+@onready var throwAudio:AudioStreamPlayer2D = $"../throwAudio"
 
 var lastObjectToGrab: Array = []
 var objectBeingGrabbed: RigidBody2D = null
@@ -39,6 +41,7 @@ func grab():
 	
 	topPlayerNode.setWalkAnimation("grabbing-walk")
 	topPlayerNode.setIdleAnimation("grabbing-idle")
+	pickUpAudio.play()
 		
 	
 func ungrab():
@@ -49,6 +52,7 @@ func ungrab():
 	formerObjectBeingGrabbedParent = null
 	topPlayerNode.setWalkAnimation("walk")
 	topPlayerNode.setIdleAnimation("idle")
+	throwAudio.play()
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("movement-left"):

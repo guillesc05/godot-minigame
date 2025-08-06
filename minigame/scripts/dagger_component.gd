@@ -13,20 +13,23 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func hitStatue(body):
+	body.get_node("ThrowOreComponent").hitByDagger()
+	freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
+	freeze = true
+	$grabbableComponent.queue_free()
+	used = true
+	
+	var rot: float = 0
+	if body.scale.x < 0: rot = 180
+			
+	rotation_degrees = rot
+	
+	$hitAudio.play()
 
 func _on_body_entered(body: Node) -> void:
 	if(!used):
 		print(body.name)
 		if body.has_node("ThrowOreComponent"): 
-			body.get_node("ThrowOreComponent").instantiateOre()
-			freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
-			freeze = true
-			$grabbableComponent.queue_free()
-			used = true
-			
-			var rot: float = 0
-			if body.scale.x < 0: rot = 180
-			
-			rotation_degrees = rot
-			
-			var cam = get_viewport().get_camera_2d()
+			hitStatue(body)
+		
