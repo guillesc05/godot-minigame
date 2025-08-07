@@ -9,6 +9,7 @@ radius = 3.0
 height = 10.0
 
 [node name="dagger" type="RigidBody2D"]
+collision_layer = 2
 script = ExtResource("1_5mald")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

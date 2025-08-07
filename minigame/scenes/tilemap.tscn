@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://6touh2dqy0il"]
+[gd_scene load_steps=10 format=4 uid="uid://6touh2dqy0il"]
 
 [ext_resource type="Texture2D" uid="uid://b70t88dpekndx" path="res://assets/tilemap.png" id="1_1i3gi"]
 [ext_resource type="Texture2D" uid="uid://c5gey8wqsps4i" path="res://assets/cannon.png" id="2_38yc0"]
@@ -26,6 +26,7 @@ texture_region_size = Vector2i(8, 8)
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -1.8584, 4, -1.74745, 4, -4, -4, -4)
 3:2/0 = 0
 3:0/0 = 0
 
@@ -44,14 +45,40 @@ texture_region_size = Vector2i(8, 8)
 tile_size = Vector2i(8, 8)
 sources/1 = SubResource("TileSetAtlasSource_38yc0")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fofut"]
+texture = ExtResource("1_1i3gi")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, -1.52555, -4, -1.52555)
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_i8yab"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 4
+sources/1 = SubResource("TileSetAtlasSource_fofut")
+
 [node name="TILEMAP" type="TileMapLayer"]
 z_index = -2
-tile_map_data = PackedByteArray(0, 0, 37, 0, 18, 0, 0, 0, 3, 0, 2, 0, 0, 0, 38, 0, 18, 0, 0, 0, 3, 0, 2, 0, 0, 0, 39, 0, 18, 0, 0, 0, 3, 0, 2, 0, 0, 0, 39, 0, 19, 0, 0, 0, 3, 0, 2, 0, 0, 0, 38, 0, 19, 0, 0, 0, 3, 0, 2, 0, 0, 0)
+tile_map_data = PackedByteArray("AAD8/wAAAAABAAAAAAD7/wAAAAABAAAAAAD6/wAAAAABAAAAAAD5/wAAAAABAAAAAAD4/wAAAAABAAAAAAD3/wAAAAABAAAAAAD2/wAAAAABAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAABAAAAAAD2/wEAAAABAAEAAAD3/wEAAAABAAEAAAD4/wEAAAABAAEAAAD5/wEAAAABAAEAAAD6/wEAAAABAAEAAAD7/wEAAAABAAEAAAD8/wEAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAAIAAEAAAAAAAEAAAAJAAEAAAABAAEAAAAJAAIAAAABAAEAAAAIAAIAAAAAAAEAAAACAAIAAAABAAEAAAABAAIAAAABAAEAAAD8/wIAAAABAAEAAAD7/wIAAAABAAEAAAD6/wIAAAABAAEAAAD5/wIAAAABAAEAAAD4/wIAAAABAAEAAAD3/wIAAAABAAEAAAD2/wIAAAABAAEAAAD2/wMAAAABAAEAAAD3/wMAAAABAAEAAAD4/wMAAAABAAEAAAD5/wMAAAABAAEAAAD6/wMAAAABAAEAAAD7/wMAAAABAAEAAAD8/wMAAAABAAEAAAABAAMAAAABAAEAAAACAAMAAAABAAEAAAAIAAMAAAAAAAEAAAAJAAMAAAABAAEAAAACAAAAAAABAAAAAAABAAAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAEAAAACAAEAAAADAAIAAAACAAEAAAADAAMAAAACAAEAAAD9/wEAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAD//wMAAAABAAEAAAD+/wMAAAABAAEAAAD9/wMAAAABAAEAAAD9/wIAAAABAAEAAAD+/wIAAAABAAEAAAD//wIAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_yk1nn")
 script = ExtResource("2_v3dip")
 
 [node name="cannon" type="TileMapLayer" parent="."]
 visibility_layer = 524289
 z_index = -2
-tile_map_data = PackedByteArray(0, 0, 0, 0, 249, 255, 1, 0, 0, 0, 1, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAAAPn/AQAAAAEAAAA=")
 tile_set = SubResource("TileSet_fofut")
+
+[node name="bridge" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAADAP//AQADAAIAAAAIAP//AQADAAAAAAAHAAAAAQADAAEAAAAFAAAAAQADAAEAAAAGAAAAAQADAAEAAAAEAAAAAQADAAEAAAA=")
+tile_set = SubResource("TileSet_i8yab")

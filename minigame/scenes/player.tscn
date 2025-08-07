@@ -77,6 +77,7 @@ animations = [{
 size = Vector2(6, 8)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("2_onrkg")
 
 [node name="spriteAnim" type="AnimatedSprite2D" parent="."]
@@ -86,6 +87,7 @@ speed_scale = 1.2
 script = ExtResource("4_qlg0r")
 
 [node name="grabComponent" type="Area2D" parent="."]
+collision_mask = 7
 script = ExtResource("3_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="grabComponent"]

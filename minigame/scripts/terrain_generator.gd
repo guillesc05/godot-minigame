@@ -13,10 +13,6 @@ func _ready() -> void:
 		
 
 func generate_terrain()->void:
-	for k in range(-CANNON_BASE_WIDTH, CANNON_BASE_WIDTH):
-		set_cell(Vector2i(k, 0), 0, Vector2i(1,0))
-		for k2 in 4:
-			set_cell(Vector2i(k, k2+ 1), 0, Vector2i(1,1))
 	
 	generateMountain()
 	
@@ -35,7 +31,7 @@ func generateMountain():
 		height += heightNoise
 		
 		set_cell(Vector2i(i + CANNON_BASE_WIDTH, -height), 0, Vector2i(1,0))
-		for j in (height):
+		for j in range(-4, height):
 			set_cell(Vector2i(i + CANNON_BASE_WIDTH, -j), 0, Vector2i(1,1))
 		#mountain statue
 	var mountainStatue = statueRef.instantiate()

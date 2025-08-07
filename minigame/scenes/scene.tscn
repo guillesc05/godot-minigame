@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dridn07fcbu4h"]
+[gd_scene load_steps=8 format=3 uid="uid://dridn07fcbu4h"]
 
 [ext_resource type="PackedScene" uid="uid://cmpqm776yspdo" path="res://scenes/player.tscn" id="1_ulcgi"]
 [ext_resource type="PackedScene" uid="uid://htquxikymh1q" path="res://scenes/sky_canvas.tscn" id="3_5fb3c"]
@@ -6,11 +6,12 @@
 [ext_resource type="Script" uid="uid://b6ejlhxuwg644" path="res://scripts/camera_2d.gd" id="5_m7jmp"]
 [ext_resource type="PackedScene" uid="uid://cy6n8mvh07y06" path="res://scenes/dagger.tscn" id="6_ruw3y"]
 [ext_resource type="Script" uid="uid://b703acpckr47w" path="res://scripts/scene_info.gd" id="6_t7and"]
+[ext_resource type="PackedScene" uid="uid://bpuyx28q6h0nx" path="res://scenes/mountain_relic.tscn" id="7_ruw3y"]
 
 [node name="Scene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ulcgi")]
-position = Vector2(47, -4)
+position = Vector2(-43, -4)
 
 [node name="tilemap" parent="." instance=ExtResource("3_3253y")]
 
@@ -25,3 +26,7 @@ position = Vector2(0, -180)
 script = ExtResource("6_t7and")
 
 [node name="dagger" parent="." instance=ExtResource("6_ruw3y")]
+position = Vector2(-26, -4)
+
+[node name="mountain_relic" parent="." instance=ExtResource("7_ruw3y")]
+position = Vector2(24, -28)
