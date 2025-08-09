@@ -3,8 +3,11 @@ extends CharacterBody2D
 @onready var animator:AnimatedSprite2D = $spriteAnim
 @onready var jumpAudio:AudioStreamPlayer2D = $jumpAudio
 
-const SPEED = 50
+const SPEED:float = 50
 const JUMP_VELOCITY = -200.0
+var linear_damp:float = 0
+
+func set_player_linear_damp(num:float): linear_damp = num
 
 var walkAnimation:String = "walk"
 var idleAnimation:String = "idle"
@@ -16,6 +19,7 @@ func setIdleAnimation(anim:String):
 	idleAnimation = anim
 
 func _physics_process(delta: float) -> void:
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -29,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("movement-left", "movement-right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * (SPEED - linear_damp)
 		animator.play(walkAnimation)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)

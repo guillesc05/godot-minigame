@@ -1,6 +1,14 @@
 extends Node2D
 
-@onready var oreArray = []
+const RELICS_REQUIRED:int = 2
 
-func _pushOre(ore)-> void :
-	oreArray.push_back(ore)
+var relic_count:int =0
+
+signal cannon_filled;
+signal game_won;
+
+func relic_delivered(color:Color):
+	relic_count+=1
+	cannon_filled.emit(color)
+	if relic_count == RELICS_REQUIRED:
+		game_won;

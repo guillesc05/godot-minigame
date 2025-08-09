@@ -7,17 +7,10 @@ var isShaking:bool = false
 
 var rng = RandomNumberGenerator.new()
 
-const OFFSET = 38
-
-var camYOffset = -OFFSET
-
 func _process(delta: float) -> void:
 	position.x = player.position.x
-	position.y = lerp(position.y, player.position.y + camYOffset, 0.01)
+	position.y = lerp(position.y, calculateCamHeight(), .03)
 	if isShaking: offset = getRndOffset()
-
-func moveCamUp(): camYOffset = -OFFSET
-func moveCamDown(): camYOffset = OFFSET
 	
 func shakeCam(intensity: float, time: float):
 	if isShaking: return
@@ -30,3 +23,18 @@ func shakeCam(intensity: float, time: float):
 
 func getRndOffset() -> Vector2:
 	return Vector2(rng.randf_range(-shakeStrength, shakeStrength), rng.randf_range(-shakeStrength, shakeStrength))
+
+func calculateCamHeight()->float:
+	var playerPosX:float = player.position.x
+	var playerVelX:float = player.velocity.x
+	var baseLimit = Constants.CANNON_BASE_WIDTH * Constants.TILE_SIZE
+	
+	
+	#if player outside base
+	if abs(playerPosX) > baseLimit && abs(playerPosX) <(Constants.MOUNTAIN_WIDTH-10)* Constants.TILE_SIZE:
+		if playerVelX >0:
+			return player.position.y -44
+		else: if playerVelX <0:
+			return player.position.y + 33
+
+	return player.position.y -44

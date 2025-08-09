@@ -27,7 +27,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body.has_node("grabbableComponent"):
 		lastObjectToGrab.erase(body)
-		if lastObjectToGrab.size() >0:
+		if lastObjectToGrab.size() >0 && lastObjectToGrab[0] != null:
 			e_key.setObjectToFollow(lastObjectToGrab[0])
 		else: if e_key != null: 
 			e_key.queue_free()
