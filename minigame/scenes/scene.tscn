@@ -40,4 +40,4 @@ offset_right = -80.0
 offset_bottom = 1787.0
 
 [node name="Node2D" parent="." instance=ExtResource("7_ruw3y")]
-position = Vector2(-66, -65)
+position = Vector2(-92, -66)
