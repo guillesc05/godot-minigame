@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://df54taqv4dqcw"]
+
+[ext_resource type="FontFile" uid="uid://w0306weplpqg" path="res://assets/fonts/Undead Pixel 8.ttf" id="1_wwb76"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t50sv"]
+font = ExtResource("1_wwb76")
+font_size = 8
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "my hero... you need"
+label_settings = SubResource("LabelSettings_t50sv")

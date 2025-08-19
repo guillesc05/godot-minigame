@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://dridn07fcbu4h"]
+[gd_scene load_steps=9 format=3 uid="uid://dridn07fcbu4h"]
 
 [ext_resource type="PackedScene" uid="uid://cmpqm776yspdo" path="res://scenes/player.tscn" id="1_ulcgi"]
 [ext_resource type="PackedScene" uid="uid://htquxikymh1q" path="res://scenes/sky_canvas.tscn" id="3_5fb3c"]
 [ext_resource type="PackedScene" uid="uid://6touh2dqy0il" path="res://scenes/tilemap.tscn" id="3_3253y"]
 [ext_resource type="Script" uid="uid://52rgv6mwwdnc" path="res://scripts/dagger_instantiate.gd" id="5_gjmho"]
 [ext_resource type="Script" uid="uid://b6ejlhxuwg644" path="res://scripts/camera_2d.gd" id="5_m7jmp"]
+[ext_resource type="Shader" uid="uid://bwis7jgwjism5" path="res://shaders/water_distortion.gdshader" id="6_t7and"]
+[ext_resource type="PackedScene" uid="uid://df54taqv4dqcw" path="res://scenes/text.tscn" id="7_ruw3y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ruw3y"]
+shader = ExtResource("6_t7and")
+shader_parameter/intensity = 0.46
+shader_parameter/base_water_color = Color(0, 0, 0, 1)
+shader_parameter/highlight_scale = 3.0
+shader_parameter/clarity = 0.0
 
 [node name="Scene" type="Node2D"]
 
@@ -21,3 +30,14 @@ script = ExtResource("5_m7jmp")
 
 [node name="dagger_instantiate" type="Node2D" parent="."]
 script = ExtResource("5_gjmho")
+
+[node name="water" type="ColorRect" parent="."]
+z_index = -3
+material = SubResource("ShaderMaterial_ruw3y")
+offset_left = -2217.0
+offset_top = 4.0
+offset_right = -80.0
+offset_bottom = 1787.0
+
+[node name="Node2D" parent="." instance=ExtResource("7_ruw3y")]
+position = Vector2(-66, -65)

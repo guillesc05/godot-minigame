@@ -1,5 +1,7 @@
 shader_type canvas_item;
 
+
+
 // Animate from 0 to 1, result in 0 should be the same as in 1, a loop
 uniform float progress: hint_range(0.0, 1.0) = 0.0;
 

@@ -1,6 +1,7 @@
 extends TileMapLayer
 
 @onready var statueRef = preload("res://scenes/statue.tscn")
+@onready var grassTilemap: TileMapLayer = $grass
 
 @onready var mountain_relic = "res://scenes/mountain_relic.tscn"
 @onready var ocean_relic = "res://scenes/ocean_relic.tscn"
@@ -31,7 +32,12 @@ func generateMountain():
 		var heightNoise = round(noise.get_noise_1d(rnd_seed + i) * 1.5)
 		height += heightNoise
 		
-		set_cell(Vector2i(i + Constants.CANNON_BASE_WIDTH, -height), 0, Vector2i(1,0))
+		var tilePos = Vector2i(i + Constants.CANNON_BASE_WIDTH, -height)
+		
+		set_cell(tilePos, 0, Vector2i(1,0))
+		if rng.randf() <= 0.8:
+			var randomGrass = rng.randi_range(0,5)
+			grassTilemap.set_cell(tilePos + Vector2i.UP, 0, Vector2i(randomGrass, 0))
 		for j in range(-4, height):
 			set_cell(Vector2i(i + Constants.CANNON_BASE_WIDTH, -j), 0, Vector2i(1,1))
 		#mountain statue

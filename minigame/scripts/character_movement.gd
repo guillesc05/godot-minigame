@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("movement-jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY + 3*  linear_damp
 		jumpAudio.play()
 
 	# Get the input direction and handle the movement/deceleration.
