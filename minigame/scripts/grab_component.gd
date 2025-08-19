@@ -39,8 +39,10 @@ func grab():
 	objectBeingGrabbed.reparent(topPlayerNode)
 	objectBeingGrabbed.position = Vector2(0, -15)
 	
-	topPlayerNode.setWalkAnimation("grabbing-walk")
-	topPlayerNode.setIdleAnimation("grabbing-idle")
+	var movement = topPlayerNode.get_node("movement")
+	
+	movement.setWalkAnimation("grabbing-walk")
+	movement.setIdleAnimation("grabbing-idle")
 	pickUpAudio.play()
 		
 	
@@ -50,8 +52,10 @@ func ungrab():
 	objectBeingGrabbed.apply_impulse(throwDirection* THROW_FORCE)
 	objectBeingGrabbed = null
 	formerObjectBeingGrabbedParent = null
-	topPlayerNode.setWalkAnimation("walk")
-	topPlayerNode.setIdleAnimation("idle")
+	
+	var movement = topPlayerNode.get_node("movement")
+	movement.setWalkAnimation("walk")
+	movement.setIdleAnimation("idle")
 	throwAudio.play()
 
 func _input(event: InputEvent) -> void:

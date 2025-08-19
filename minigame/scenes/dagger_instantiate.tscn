@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dehnnputisam"]
+
+[ext_resource type="Script" uid="uid://52rgv6mwwdnc" path="res://scripts/dagger_instantiate.gd" id="1_rudt8"]
+[ext_resource type="AudioStream" uid="uid://cu2gm7bclc2tj" path="res://assets/sounds/angelic.wav" id="2_mqc62"]
+
+[node name="dagger_instantiate" type="Node2D"]
+script = ExtResource("1_rudt8")
+
+[node name="fanfare" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_mqc62")

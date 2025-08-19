@@ -1,11 +1,11 @@
 extends Node2D
 @onready var dagger = preload("res://scenes/dagger.tscn")
+@onready var fanfare:AudioStreamPlayer2D = $fanfare
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SceneInfo.cannon_filled.connect(createDagger)
-	var a
-	createDagger(a)
+	SceneInfo.instantiate_dagger.connect(createDagger)
+	SceneInfo.dialogue_ended.connect(createDagger)
 	pass # Replace with function body.
 
 
@@ -13,7 +13,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func createDagger(color):
-	var daggerInstanted = dagger.instantiate()
-	add_child(daggerInstanted)
-	daggerInstanted.position = Vector2(0, -10)
+func createDagger():
+	fanfare.play()
+	var daggerInstanced = dagger.instantiate()
+	add_child(daggerInstanced)
+	daggerInstanced.position = Vector2(-35, -100)
+	daggerInstanced.freeze = true
+	var tween = get_tree().create_tween()
+	tween.tween_property(daggerInstanced, "position", Vector2(-35, -10), 2)
+	await tween.finished
+	daggerInstanced.freeze = false

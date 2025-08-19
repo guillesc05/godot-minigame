@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://df54taqv4dqcw"]
+[gd_scene load_steps=5 format=3 uid="uid://df54taqv4dqcw"]
 
 [ext_resource type="Script" uid="uid://j8dboxid2752" path="res://scripts/dialogue.gd" id="1_t50sv"]
 [ext_resource type="FontFile" uid="uid://w0306weplpqg" path="res://assets/fonts/Undead Pixel 8.ttf" id="1_wwb76"]
+[ext_resource type="AudioStream" uid="uid://7iug2yb0jmw4" path="res://assets/sounds/dialogueSound.wav" id="3_qooke"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t50sv"]
 font = ExtResource("1_wwb76")
@@ -19,3 +20,8 @@ label_settings = SubResource("LabelSettings_t50sv")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="dialogue_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qooke")
+volume_db = -15.326
+pitch_scale = 0.98
