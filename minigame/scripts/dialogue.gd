@@ -9,10 +9,10 @@ const AWAIT_TIME = 1.3
 
 var dialogues = [
 "My child...", 
-"A horrible monster\nis falling\nfrom the skies",
-"And if it were to\ncollide, we will all\nperish",
+"A horrible monster\nis falling\nfrom the skies.",
+"And if it were to\ncollide, we will all\nperish.",
 "Look up at the sky.\nCan you see it?",
-"You must harvest\nthe two sacred relics\nguarded by golems\nand throw them\ndown the cliff",
+"You must harvest\nthe two sacred relics\nguarded by golems\nand throw them\ndown the cliff.",
 "With that,\nwe may be able to\nstop our horrible\ndestiny!",
 "Please, take this\nand save us all!"
 ]
