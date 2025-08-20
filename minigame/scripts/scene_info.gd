@@ -2,7 +2,7 @@ extends Node2D
 @onready var lost_timer:Timer = $Timer
 
 const RELICS_REQUIRED:int = 2
-const TIME_UNTIL_LOST = 3
+const TIME_UNTIL_LOST:float = 160
 
 var relic_count:int =0
 
@@ -17,7 +17,7 @@ func end_dialogue() -> void:
 	dialogue_ended.emit()
 	lost_timer.start(TIME_UNTIL_LOST)
 	await lost_timer.timeout
-	game_won.emit()
+	game_lost.emit()
 
 
 func relic_delivered(color:Color):

@@ -6,7 +6,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u3cyc"]
 shader = ExtResource("1_owpp6")
 shader_parameter/bg_color = Color(0, 0, 0, 1)
-shader_parameter/offset = Vector2(0, 0)
+shader_parameter/offsetX = 0.0
+shader_parameter/offsetY = 0.0
 shader_parameter/bigStarSlow = 2.0
 shader_parameter/mediumStarSlow = 6.0
 shader_parameter/smallStarSlow = 8.0

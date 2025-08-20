@@ -18,7 +18,7 @@ var dialogues = [
 ]
 
 func _ready() -> void:
-	await displayText()
+	#await displayText()
 	label.text = ""
 	SceneInfo.end_dialogue()
 

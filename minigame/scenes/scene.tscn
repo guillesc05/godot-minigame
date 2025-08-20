@@ -11,10 +11,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ruw3y"]
 shader = ExtResource("6_t7and")
-shader_parameter/intensity = 0.46
+shader_parameter/intensity = 0.0
 shader_parameter/base_water_color = Color(0, 0, 0, 1)
 shader_parameter/highlight_scale = 3.0
-shader_parameter/clarity = 0.0
+shader_parameter/clarity = 0.42
 
 [node name="Scene" type="Node2D"]
 
