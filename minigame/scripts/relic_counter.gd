@@ -11,4 +11,5 @@ func _on_body_entered(body: Node2D) -> void:
 	SceneInfo.relic_delivered(color)
 	explosionAudio.play()
 	particles.emitting = true
-	get_viewport().get_camera_2d().shakeCam(1, 1)
+	if get_viewport() != null:
+		get_viewport().get_camera_2d().shakeCam(1, 1)

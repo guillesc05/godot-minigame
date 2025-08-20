@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://qq31vo64ovrr"]
+
+[ext_resource type="FontFile" uid="uid://w0306weplpqg" path="res://assets/fonts/Undead Pixel 8.ttf" id="1_va80r"]
+[ext_resource type="Script" uid="uid://c2oyi0ha3id3m" path="res://scenes/win_time.gd" id="2_cg5yi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1eaaq"]
+font = ExtResource("1_va80r")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_dr2b1"]
+font = ExtResource("1_va80r")
+font_size = 8
+
+[node name="won_screen" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 129.0
+offset_bottom = 135.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 33.0
+offset_right = 112.0
+offset_bottom = 86.0
+text = "You killed the monster and everyone is alive"
+label_settings = SubResource("LabelSettings_1eaaq")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="time" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 73.0
+offset_right = 100.0
+offset_bottom = 96.0
+text = "Time: "
+label_settings = SubResource("LabelSettings_dr2b1")
+script = ExtResource("2_cg5yi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(64, 66)

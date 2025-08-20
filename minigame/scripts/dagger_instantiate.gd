@@ -20,6 +20,6 @@ func createDagger():
 	daggerInstanced.position = Vector2(-35, -100)
 	daggerInstanced.freeze = true
 	var tween = get_tree().create_tween()
-	tween.tween_property(daggerInstanced, "position", Vector2(-35, -10), 2)
+	tween.tween_property(daggerInstanced, "position", Vector2(-35, -10), 3)
 	await tween.finished
 	daggerInstanced.freeze = false

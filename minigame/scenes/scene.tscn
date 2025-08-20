@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dridn07fcbu4h"]
+[gd_scene load_steps=10 format=3 uid="uid://dridn07fcbu4h"]
 
 [ext_resource type="PackedScene" uid="uid://cmpqm776yspdo" path="res://scenes/player.tscn" id="1_ulcgi"]
 [ext_resource type="PackedScene" uid="uid://htquxikymh1q" path="res://scenes/sky_canvas.tscn" id="3_5fb3c"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dehnnputisam" path="res://scenes/dagger_instantiate.tscn" id="5_ruw3y"]
 [ext_resource type="Shader" uid="uid://bwis7jgwjism5" path="res://shaders/water_distortion.gdshader" id="6_t7and"]
 [ext_resource type="PackedScene" uid="uid://df54taqv4dqcw" path="res://scenes/text.tscn" id="7_ruw3y"]
+[ext_resource type="Script" uid="uid://cs3u0dh3o8wsf" path="res://scripts/scene_change.gd" id="8_7182s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ruw3y"]
 shader = ExtResource("6_t7and")
@@ -40,3 +41,6 @@ offset_bottom = 1787.0
 
 [node name="dialogue" parent="." instance=ExtResource("7_ruw3y")]
 position = Vector2(-51, -85)
+
+[node name="scene_change" type="Node2D" parent="."]
+script = ExtResource("8_7182s")

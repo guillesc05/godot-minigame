@@ -9,19 +9,18 @@ const AWAIT_TIME = 1.3
 
 var dialogues = [
 "My child...", 
-"Can't you see the\ncalamity that is \napproaching?",
-"You have to rush... \nor else we will all die",
-"Look up at the sky\nand you will understand.\nIt is horrible",
-"Harvest\nthe two sacred relics\nguarded by golems",
-"and throw them\ndown the cliff",
-"That will charge\nthe magic cannon and stop\nthis horrible threat",
+"A horrible monster\nis falling\nfrom the skies",
+"And if it were to\ncollide, we will all\nperish",
+"Look up at the sky.\nCan you see it?",
+"You must harvest\nthe two sacred relics\nguarded by golems\nand throw them\ndown the cliff",
+"With that,\nwe may be able to\nstop our horrible\ndestiny!",
 "Please, take this\nand save us all!"
 ]
 
 func _ready() -> void:
 	await displayText()
 	label.text = ""
-	SceneInfo.dialogue_ended.emit()
+	SceneInfo.end_dialogue()
 
 func displayText():
 	for j in dialogues.size():
