@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dridn07fcbu4h"]
+[gd_scene load_steps=13 format=3 uid="uid://dridn07fcbu4h"]
 
 [ext_resource type="PackedScene" uid="uid://cmpqm776yspdo" path="res://scenes/player.tscn" id="1_ulcgi"]
 [ext_resource type="PackedScene" uid="uid://htquxikymh1q" path="res://scenes/sky_canvas.tscn" id="3_5fb3c"]
@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://dehnnputisam" path="res://scenes/dagger_instantiate.tscn" id="5_ruw3y"]
 [ext_resource type="Shader" uid="uid://bwis7jgwjism5" path="res://shaders/water_distortion.gdshader" id="6_t7and"]
 [ext_resource type="PackedScene" uid="uid://df54taqv4dqcw" path="res://scenes/text.tscn" id="7_ruw3y"]
-[ext_resource type="Script" uid="uid://cs3u0dh3o8wsf" path="res://scripts/scene_change.gd" id="8_7182s"]
+[ext_resource type="PackedScene" uid="uid://c38phy53ffbus" path="res://scenes/scene_change.tscn" id="8_dqloj"]
+[ext_resource type="Texture2D" uid="uid://dl02utakwbbac" path="res://assets/shot.png" id="9_tpwpp"]
+[ext_resource type="Script" uid="uid://dd771bqynnsav" path="res://scripts/shot.gd" id="10_7ftgl"]
+[ext_resource type="AudioStream" uid="uid://dmloudxjmj4kr" path="res://assets/sounds/cannon_shot.wav" id="11_5yiy0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ruw3y"]
 shader = ExtResource("6_t7and")
@@ -42,5 +45,13 @@ offset_bottom = 1787.0
 [node name="dialogue" parent="." instance=ExtResource("7_ruw3y")]
 position = Vector2(-51, -85)
 
-[node name="scene_change" type="Node2D" parent="."]
-script = ExtResource("8_7182s")
+[node name="scene_change" parent="." instance=ExtResource("8_dqloj")]
+
+[node name="Shot" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-7, -144)
+texture = ExtResource("9_tpwpp")
+script = ExtResource("10_7ftgl")
+
+[node name="shot_audio" type="AudioStreamPlayer2D" parent="Shot"]
+stream = ExtResource("11_5yiy0")

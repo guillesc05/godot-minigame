@@ -20,8 +20,6 @@ shape = SubResource("CapsuleShape2D_5mald")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qwa6k")
 
-[node name="grabbableComponent" type="Node2D" parent="."]
-
 [node name="hitAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_phngh")
 
